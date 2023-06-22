@@ -1,3 +1,9 @@
 export interface Menuitem {
-    id: string
+    id: number,
+    name: string,
+    price: number,
+    category: string,
+    isChefsChoice: boolean,
+    extraInfo: string[],
+    imageUrl: string
 }
