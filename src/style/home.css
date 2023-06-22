@@ -1,9 +1,8 @@
-/*.background-image {
-}*/
+body {
+  background-color: black;
+}
 
 .container {
-  /*position: absolute;*/
-  /*display: block;*/
   background-image: url(../assets/Dollarphotoclub_61600915-2640942634.jpeg);
   background-color: black;
   background-repeat: no-repeat;
@@ -12,8 +11,6 @@
   padding-bottom: 671px;
   filter: blur(3px);
   position: relative;
-  /*transform: scale(1.1);*/
-
 }
 
 .content {
@@ -34,4 +31,12 @@
     bottom: 0;
     height: 400px;
   background: linear-gradient(0deg, rgba(0,0,0,1) 30%, rgba(255,255,255,0) 100%);
+}
+
+.title-description {
+  color: white;
+  font-size: 72px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 300px;
 }
