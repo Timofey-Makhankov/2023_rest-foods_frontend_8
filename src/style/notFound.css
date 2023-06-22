@@ -1,0 +1,16 @@
+body {
+    background-color: white;
+}
+
+.not-found-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 76.6vh;
+}
+
+.not-found-title {
+    color: black;
+    font-size: 72px;
+    text-align: center;
+}

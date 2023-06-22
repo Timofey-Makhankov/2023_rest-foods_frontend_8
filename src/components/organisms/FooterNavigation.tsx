@@ -8,7 +8,7 @@ const textStyle = {
 
 export default function FooterNavigation() {
     return (
-        <footer>
+        <footer >
             <div className='flex-grid-div'>
                 <Link color='inherit' underline='none'>
                     <Typography style={textStyle}>About</Typography>

@@ -1,1 +1,5 @@
 export const JWT_KEY = "access_token"
+export const HOME_PAGE = "/"
+export const MENU_LIST_PAGE = "/menu-list"
+export const TABLE_LIST_PAGE = "/tables"
+export const DETAILED_MENU_PAGE = "/"

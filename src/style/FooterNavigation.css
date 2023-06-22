@@ -1,7 +1,7 @@
 .flex-grid-div {
     color: white;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     background-color: rgb(37, 37, 37);
     display: flex;
     justify-content: space-around;

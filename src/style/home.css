@@ -25,12 +25,16 @@ body {
 }
 
 .rectangle {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 400px;
-  background: linear-gradient(0deg, rgba(0,0,0,1) 30%, rgba(255,255,255,0) 100%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 400px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .title-description {
@@ -38,5 +42,14 @@ body {
   font-size: 72px;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 300px;
+  padding-top: 50px;
+  padding-bottom: 350px;
+}
+
+.navigation-bar-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 150;
 }

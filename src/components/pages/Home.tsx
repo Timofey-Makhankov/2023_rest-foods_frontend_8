@@ -1,16 +1,20 @@
 import React from 'react';
 import '../../style/home.css'
+import '../../style/navigationBar.css'
 import NavigationBar from '../organisms/NavigationBar';
 import FooterNavigation from '../organisms/FooterNavigation';
 
-const appBarStyle = {
-    background: 'rgba(0, 0, 0, 0)'
+const appBarStyle: React.CSSProperties = {
+    background: 'rgba(0, 0, 0, 0)',
+    boxShadow: 'none'
 }
 
 export default function Home() {
     return (
-        <>
-            <NavigationBar style={appBarStyle}/>
+        <div style={{backgroundColor: 'black'}}>
+        <div className='navigation-bar-container'>
+        <NavigationBar appBarStyle={appBarStyle}/>
+        </div>
             <div className='container'>
                 <div className='rectangle' />
             </div>
@@ -21,6 +25,6 @@ export default function Home() {
                 <p className='title-description'>The Most beloved <br/> Internet Restaurant of <br/> the decade </p>
             </div>
             <FooterNavigation/>
-        </>
+        </div>
     )
 }
