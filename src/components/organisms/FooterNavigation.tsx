@@ -1,4 +1,3 @@
-import React from 'react'
 import '../../style/FooterNavigation.css'
 import { Link, Typography } from '@mui/material'
 import { ABOUT_PAGE, CONTACT_PAGE, MENU_LIST_PAGE } from '../../Constants'
@@ -7,6 +6,12 @@ const textStyle = {
     fontSize: '20px'
 }
 
+/**
+ * Footer Navigation
+ * @returns a footer Navigation Component
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export default function FooterNavigation() {
     return (
         <footer >

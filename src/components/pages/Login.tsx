@@ -1,6 +1,12 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
 import NavigationBar from '../organisms/NavigationBar'
 
+/**
+ * This Component is the Login Page, where the user can login
+ * @returns the Login page Component
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export default function Login() {
   return (
     <>

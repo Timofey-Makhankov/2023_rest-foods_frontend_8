@@ -1,10 +1,16 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material'
-import React from 'react'
 import { Menuitem } from '../../types/MenuItem'
 import ChefIcon from './ChefIcon'
 import { Link as RouterLink } from 'react-router-dom'
 import { DETAILED_MENU_PAGE } from '../../Constants'
 
+/**
+ * A Menu Card with some Information
+ * @param prop takes a Menuitem Type as input
+ * @returns a MenuItemCard Component with the data from the prop
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export default function MenuItemCard({ prop }: {prop: Menuitem}) {
   return (
     <Card>

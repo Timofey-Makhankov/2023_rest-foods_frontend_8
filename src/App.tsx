@@ -7,6 +7,12 @@ import { DETAILED_MENU_PAGE, HOME_PAGE, LOGIN_PAGE, MENU_LIST_PAGE, TABLE_LIST_P
 import Login from './components/pages/Login';
 import DetailedMenu from './components/pages/DetailedMenu';
 
+/**
+ * The Starting Point of all Routes in the Aplication
+ * @returns The App Component with all the Routes defined
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 function App() {
   return (
     <Routes>

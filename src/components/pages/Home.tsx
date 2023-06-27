@@ -9,6 +9,12 @@ const appBarStyle: React.CSSProperties = {
     boxShadow: 'none'
 }
 
+/**
+ * This is the Home Page of the Aplication
+ * @returns the Home Page Component
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export default function Home() {
     return (
         <div style={{backgroundColor: 'black'}}>

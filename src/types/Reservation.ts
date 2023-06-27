@@ -1,3 +1,8 @@
+/**
+ * A Type with all properties of a Reservation
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export interface Reservation {
     id: number,
     seats: number,

@@ -7,6 +7,12 @@ import { Menuitem } from '../../types/MenuItem'
 import MenuItemCard from '../molecules/MenuItemCard'
 import { sortMenuListByChefsChoice } from '../../util/MenuItemSort'
 
+/**
+ * This Page shows all the Menu Items that are available
+ * @returns the Menu List Page Component
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export default function MenuList() {
 
   const exampleData: Menuitem[] = [
