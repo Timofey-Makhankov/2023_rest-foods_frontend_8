@@ -5,7 +5,7 @@ import '../../style/notFound.css'
 export default function NotFound() {
     return (
         <div className='not-found-wrapper'>
-            <NavigationBar appBarStyle={undefined} />
+            <NavigationBar appBarStyle={{ backgroundColor: 'rgb(37, 37, 37)' }} />
             <div className='not-found-content'>
                 <p className='not-found-title'>404 - Not Found</p>
             </div>

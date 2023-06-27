@@ -1,15 +1,14 @@
 import { Button, Grid, TextField, Typography } from '@mui/material'
-import React from 'react'
 import NavigationBar from '../organisms/NavigationBar'
 
 export default function Login() {
   return (
     <>
-    <NavigationBar appBarStyle={undefined}/>
+    <NavigationBar appBarStyle={{ backgroundColor: 'rgb(37, 37, 37)' }}/>
     <form>
-        <Grid container direction="column" alignItems="center" justifyContent="center" spacing={3}>
+        <Grid container direction="column" alignItems="center" justifyContent="center" spacing={3} sx={{ mt: 10 }}>
             <Grid item xs={12}>
-                <Typography align='center' style={{ marginTop: '4em' }}>Login</Typography>
+                <Typography variant='h2' fontWeight={700} component='h1' align='center' style={{ marginTop: '4em' }}>Login</Typography>
             </Grid>
             <Grid item xs={12}>
                 <TextField
