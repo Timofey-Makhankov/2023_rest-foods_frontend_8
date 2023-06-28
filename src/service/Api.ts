@@ -4,7 +4,7 @@ import { JWT_KEY } from "../Constants"
 /**
  * The Default URL for the Axios Request object
  */
-const BASE_URL = ""
+const BASE_URL = "http://localhost:8080/api/v1"
 
 /**
  * Creates a Axios Object with the given base URL

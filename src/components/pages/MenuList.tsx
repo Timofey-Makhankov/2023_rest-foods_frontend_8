@@ -5,7 +5,9 @@ import '../../style/menuList.css'
 import { Container, Grid } from '@mui/material'
 import { Menuitem } from '../../types/MenuItem'
 import MenuItemCard from '../molecules/MenuItemCard'
-import { sortMenuListByChefsChoice } from '../../util/MenuItemSort'
+import { sortMenuListByCategoryAlphanumeric, sortMenuListByChefsChoice } from '../../util/MenuItemSort'
+import MenuService from '../../service/MenuService'
+import { MenuResponse } from '../../types/MenuResponse'
 
 /**
  * This Page shows all the Menu Items that are available
@@ -14,89 +16,32 @@ import { sortMenuListByChefsChoice } from '../../util/MenuItemSort'
  * @copyright 2023
  */
 export default function MenuList() {
-
-  const exampleData: Menuitem[] = [
-    {
-      id: 1,
-      name: "Title 1",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: false,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 2,
-      name: "Title 2",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: true,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 3,
-      name: "Title 3",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: false,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 4,
-      name: "Title 4",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: true,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 5,
-      name: "Title 5",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: true,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 6,
-      name: "Title 6",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: false,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 7,
-      name: "Title 7",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: false,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    },
-    {
-      id: 8,
-      name: "Title 8",
-      price: 420.69,
-      category: "Meditirainien",
-      isChefsChoice: true,
-      extraInfo: [],
-      imageUrl: "https://market-table.com/wp-content/uploads/2018/06/foodbowl.jpg"
-    }
-  ]
   const [menuList, setMenuList] = useState<Menuitem[]>([])
 
   useEffect(() => {
     function load(){
-      setMenuList(sortMenuListByChefsChoice(exampleData))
+      MenuService().getAllMenuItems()
+      .then((data) => {
+        const formattedResponse: Menuitem[] = []
+        data.forEach((element: MenuResponse) => {
+          formattedResponse.push({
+            id: element.menu_id,
+            name: element.name,
+            price: element.price,
+            category: element.category,
+            imageUrl: element.imageURL,
+            extraInfo: element.clarifications,
+            isChefsChoice: element.isChefsChoice ? true : false
+          })
+        });
+        setMenuList(sortMenuListByChefsChoice(sortMenuListByCategoryAlphanumeric(formattedResponse)))
+      })
+      .catch((error) => {
+        console.log(error)
+      })
     }
     load()
-  }, [menuList, exampleData])
+  }, [])
   
 
   return (
@@ -108,7 +53,7 @@ export default function MenuList() {
           <Grid container spacing={3} style={{ padding: '12px' }}>
             {menuList.map((menu: Menuitem) => {
               return (
-                <Grid item xs={4} key={menu.id}>
+                <Grid key={menu.id} item xs={4}>
                   <MenuItemCard prop={menu} />
                 </Grid>
               )
