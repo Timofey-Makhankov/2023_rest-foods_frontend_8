@@ -3,7 +3,7 @@ import NavigationBar from '../organisms/NavigationBar'
 import AuthorisationService from '../../service/AuthorisationService'
 import { DASHBOARD_PAGE, JWT_KEY } from '../../Constants'
 import { useNavigate } from 'react-router-dom'
-import { Formik, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import { useState } from 'react'
 
 /**

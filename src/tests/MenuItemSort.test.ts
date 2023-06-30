@@ -10,7 +10,8 @@ const MenuList: Menuitem[] = [
         price: 69,
         isChefsChoice: false,
         extraInfo: [],
-        imageUrl: ""
+        imageUrl: "",
+        description: ""
     }, 
     {
         id: 2,
@@ -19,7 +20,8 @@ const MenuList: Menuitem[] = [
         price: 69,
         isChefsChoice: true,
         extraInfo: [],
-        imageUrl: ""
+        imageUrl: "",
+        description: ""
     }, 
     {
         id: 3,
@@ -28,7 +30,8 @@ const MenuList: Menuitem[] = [
         price: 69,
         isChefsChoice: false,
         extraInfo: [],
-        imageUrl: ""
+        imageUrl: "",
+        description: ""
     }
 ]
 
