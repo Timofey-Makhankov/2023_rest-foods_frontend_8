@@ -20,8 +20,8 @@ export const defaultAxiosInstance: AxiosInstance = axios.create({
  */
 defaultAxiosInstance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
-        const correctPath: boolean = config.url !== "login" && config.url !== "register"
-        if (localStorage.getItem(JWT_KEY) !== "" && correctPath){
+        const correctPath: boolean = config.url !== "login" && config.url !== "register" && (config.url !== "menus" && config.method !== "get")
+        if (/*localStorage.getItem(JWT_KEY) !== "" && */correctPath){
             config.headers.Authorization = `Bearer ${localStorage.getItem(JWT_KEY)}`
         }
         return config

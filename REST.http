@@ -1,0 +1,27 @@
+GET http://localhost:8080/api/v1/menus HTTP/1.1
+
+###
+
+POST http://localhost:8080/api/v1/menus HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4ODEwNDQ0OSwiZXhwIjoxNjg4MTkwODQ5fQ.0nU4VB357gxpPdCtt1xDJE6688fcfq69AMV-BtD9RAw
+
+{
+	"name": "Honeyed Yoghurt",
+	"price": 13.2,
+	"category": "Dessert",
+	"isChefsChoice": true,
+	"imageURL": "https://lh3.googleusercontent.com/CUFZwSzFHQiUOusElio6aJPmKKoGqZ5Kkn3hQ4JkG-kzww2miGLZ-kPBToAC4tTTFHm_xrcf31BT16zl3hIbbw=w640-h640-c-rw-v1-e365",
+	"clarifications": [],
+	"description": "A Yoghurt with a hint of rare Honey"
+}
+
+###
+
+POST http://localhost:8080/api/v1/auth/authenticate HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "1234"
+}

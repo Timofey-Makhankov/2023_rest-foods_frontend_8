@@ -1,3 +1,8 @@
+/**
+ * All the properties of the menu API response
+ * @author Timofey Makhankov
+ * @copyright 2023
+ */
 export interface MenuResponse{
     menu_id: number,
     name: string,
@@ -5,5 +10,6 @@ export interface MenuResponse{
     category: string,
     isChefsChoice: false,
     imageURL: string,
-    clarifications: []
+    clarifications: [],
+    description: string
 }

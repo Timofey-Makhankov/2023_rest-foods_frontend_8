@@ -9,7 +9,7 @@ import { Menuitem } from '../../types/MenuItem'
 import ChefIcon from '../molecules/ChefIcon'
 
 export default function DetailedMenu() {
-  
+
   const { id } = useParams()
   const [menuItem, setMenuItem] = useState<Menuitem>()
 
@@ -24,7 +24,8 @@ export default function DetailedMenu() {
             category: data.category,
             imageUrl: data.imageURL,
             extraInfo: data.clarifications,
-            isChefsChoice: data.isChefsChoice ? true : false
+            isChefsChoice: data.isChefsChoice ? true : false,
+            description: data.description
           })
         })
         .catch((error) => {
@@ -36,7 +37,7 @@ export default function DetailedMenu() {
 
   return (
     <>
-      <NavigationBar appBarStyle={{ backgroundColor: 'rgb(37, 37, 37)' }} />
+      <NavigationBar appBarStyle={{ backgroundColor: 'rgba(0, 0, 0, 0)', color: "black", boxShadow: "none" }} />
       <main>
         <Container>
           <Grid container sx={{ padding: '40px 0px' }}>
@@ -46,7 +47,9 @@ export default function DetailedMenu() {
                   <img src={menuItem?.imageUrl} alt="No Image" width={400} style={{ borderRadius: '12px' }} />
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography component='p' variant='h4' >Chef's Choice: <ChefIcon /></Typography>
+                  {
+                    menuItem?.isChefsChoice ? <Typography component='p' variant='h4' >Chef's Choice: <ChefIcon /></Typography> : <></>
+                  }
                 </Grid>
               </Grid>
             </Grid>
@@ -56,7 +59,8 @@ export default function DetailedMenu() {
                   <Typography component='h1' variant='h2' fontWeight={700}>{menuItem?.name}</Typography>
                   <Typography component='p' variant='h5'>Category</Typography>
                   <Typography>{menuItem?.category}</Typography>
-                  <Typography>Price: {menuItem?.price}CHF</Typography>
+                  <Typography>{menuItem?.description}</Typography>
+                  <Typography>Price: {Number(menuItem?.price).toFixed(2)}CHF</Typography>
                   <Grid container gap={3} justifyContent='center'>
                     {menuItem?.extraInfo.map(element => {
                       return (

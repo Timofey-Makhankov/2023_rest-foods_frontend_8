@@ -10,5 +10,6 @@ export interface Menuitem {
     category: string,
     isChefsChoice: boolean,
     extraInfo: string[],
-    imageUrl: string
+    imageUrl: string,
+    description: string
 }

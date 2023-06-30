@@ -31,7 +31,8 @@ export default function MenuList() {
             category: element.category,
             imageUrl: element.imageURL,
             extraInfo: element.clarifications,
-            isChefsChoice: element.isChefsChoice ? true : false
+            isChefsChoice: element.isChefsChoice ? true : false,
+            description: element.description
           })
         });
         setMenuList(sortMenuListByChefsChoice(sortMenuListByCategoryAlphanumeric(formattedResponse)))
@@ -46,7 +47,7 @@ export default function MenuList() {
 
   return (
     <>
-      <NavigationBar appBarStyle={{ backgroundColor: 'rgb(37, 37, 37)' }} />
+      <NavigationBar appBarStyle={{ backgroundColor: 'rgba(0, 0, 0, 0)', color: "black", boxShadow: "none" }} />
       <main>
         <Container>
           <h1 className='menu-list-title'>Menu</h1>
